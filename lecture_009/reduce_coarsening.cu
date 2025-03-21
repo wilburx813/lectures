@@ -37,7 +37,7 @@ __global__ void CoarsenedReduction(float* input, float* output, int size) {
 }
 
 int main() {
-    const int size = 10000;
+    const int size = 100000;
     const int bytes = size * sizeof(float);
 
     // Allocate memory for input and output on host

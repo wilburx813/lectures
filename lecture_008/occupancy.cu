@@ -15,7 +15,7 @@ void initializeArray(float *arr, int n) {
 }
 
 int main() {
-    const int n = 1 << 24; // Adjust the data size for workload
+    const int n = 1 << 28; // Adjust the data size for workload
     float *in, *out;
 
     cudaMallocManaged(&in, n * sizeof(float));
@@ -28,7 +28,7 @@ int main() {
 
     // Optimize grid dimensions based on device properties
     int minGridSize = 40;
-    // cudaOccupancyMaxPotentialBlockSize(&minGridSize, &blockSize, copyDataCoalesced, 0, 0);
+    cudaOccupancyMaxPotentialBlockSize(&minGridSize, &blockSize, copyDataCoalesced, 0, 0);
 
     // Print suggested block size and minimum grid size
     std::cout << "Recommended block size: " << blockSize

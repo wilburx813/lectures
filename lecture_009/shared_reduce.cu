@@ -24,7 +24,7 @@ __global__ void SharedMemoryReduction(float* input, float* output) {
 
 int main() {
     // Size of the input data
-    const int size = 2048;
+    const int size = 20480;
     const int bytes = size * sizeof(float);
 
     // Allocate memory for input and output on host

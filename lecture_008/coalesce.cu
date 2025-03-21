@@ -22,7 +22,7 @@ void initializeArray(float *arr, int n) {
 }
 
 int main() {
-    const int n = 1 << 24; // Increase n to have a larger workload
+    const int n = 1 << 27; // Increase n to have a larger workload
     float *in, *out;
 
     cudaMallocManaged(&in, n * sizeof(float));
